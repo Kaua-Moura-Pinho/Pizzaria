@@ -16,6 +16,7 @@ import { AddItemController } from "./controllers/order/AddItemController";
 import { SendOrderController } from "./controllers/order/SendOrderController"; 
 import { RemoveItemController } from "./controllers/order/RemoveItemController";
 import { ListByDateOrderController } from "./controllers/order/ListByDateOrderController";
+import { ListByDateOrderFinishController } from "./controllers/order/ListByDateOrderFinishController";
 
 
 const router: Router = Router();
@@ -34,6 +35,7 @@ router.post('/order/add', isAuthenticated, new AddItemController().handle);
 router.put('/order/send', isAuthenticated, new SendOrderController().handle);
 router.delete('/delete/item', isAuthenticated, new RemoveItemController().handle);
 router.get('/order/date', isAuthenticated, new ListByDateOrderController().handle);
+router.get('/order/date/finish', isAuthenticated, new ListByDateOrderFinishController().handle);
 
 export { router };
 

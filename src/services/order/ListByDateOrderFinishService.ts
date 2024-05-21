@@ -1,6 +1,6 @@
 import prismaClient from "../../prisma";
 
-class ListByDateOrderService{
+class ListByDateOrderFinishService{
     async execute({date}){
 
         let nextdate = new Date(date);
@@ -8,7 +8,7 @@ class ListByDateOrderService{
 
         const order = await prismaClient.pedido.findMany({
             where:{
-                status: false,
+                status: true,
                 atualizado_em:{
                     gte: new Date(date),
                     lt: nextdate
@@ -19,4 +19,4 @@ class ListByDateOrderService{
     }
 }
 
-export {ListByDateOrderService}
+export {ListByDateOrderFinishService}

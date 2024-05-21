@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
-import { ListByDateOrderService } from "../../services/order/ListByDateOrderService";
+import { ListByDateOrderFinishService } from "../../services/order/ListByDateOrderFinishService";
 
-class ListByDateOrderController{
+class ListByDateOrderFinishController{
     async handle(req: Request, res: Response){
         const date = req.query.atualizado_em as string;
-        const listByDate = new ListByDateOrderService();
+        const listByDate = new ListByDateOrderFinishService();
         const order = await listByDate.execute({date});
         return res.json(order);
     }
 }
 
-export {ListByDateOrderController}
+export {ListByDateOrderFinishController}
