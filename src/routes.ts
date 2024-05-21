@@ -33,7 +33,7 @@ router.delete('/delete/order', isAuthenticated, new RemoveOrderController().hand
 router.post('/order/add', isAuthenticated, new AddItemController().handle);
 router.put('/order/send', isAuthenticated, new SendOrderController().handle);
 router.delete('/delete/item', isAuthenticated, new RemoveItemController().handle);
-router.get('order/date', isAuthenticated, new ListByDateOrderController().handle);
+router.get('/order/date', isAuthenticated, new ListByDateOrderController().handle);
 
 export { router };
 
