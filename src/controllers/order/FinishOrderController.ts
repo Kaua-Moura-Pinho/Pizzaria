@@ -7,9 +7,9 @@ class FinishOrderController{
 
         const finishOrderService = new FinishOrderService();
 
-        const order = await finishOrderService.execute({id});
+        const order = await finishOrderService.execute(id);
 
-        return res.json({order});
+        return res.json(order);
     }
 }
 

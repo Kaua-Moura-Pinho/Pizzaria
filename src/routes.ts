@@ -17,6 +17,8 @@ import { SendOrderController } from "./controllers/order/SendOrderController";
 import { RemoveItemController } from "./controllers/order/RemoveItemController";
 import { ListByDateOrderController } from "./controllers/order/ListByDateOrderController";
 import { ListByDateOrderFinishController } from "./controllers/order/ListByDateOrderFinishController";
+import { FinishOrderController } from "./controllers/order/FinishOrderController";
+import CloseOrderController from "./controllers/order/CloseOrderController";
 
 
 const router: Router = Router();
@@ -36,6 +38,8 @@ router.put('/order/send', isAuthenticated, new SendOrderController().handle);
 router.delete('/delete/item', isAuthenticated, new RemoveItemController().handle);
 router.get('/order/date', isAuthenticated, new ListByDateOrderController().handle);
 router.get('/order/date/finish', isAuthenticated, new ListByDateOrderFinishController().handle);
+router.get('/order/finish', isAuthenticated, new FinishOrderController().handle);
+router.get('/order/close', isAuthenticated, new CloseOrderController().handle);
 
 export { router };
 
